@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Mongoose cloud Database
-const dbUrl = process.env.DB_URL ||'mongodb://127.0.0.1:27017/yelpCamp';
+const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/yelpCamp';
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -52,8 +52,8 @@ db.once('open', () => {
 // Mongo Session 
 const secret = process.env.SECRET || 'thisshouldbeabettersecret';
 
-const store =  MongoStore.create({
-   mongoUrl: dbUrl,
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
     secret,
     touchAfter: 24 * 60 * 60
 });
@@ -153,7 +153,7 @@ app.use((err, req, res, next) => {
     res.status(status).render('errors/error', { err });
 })
 
-const port = process.env.PORT
-app.listen(3000, (req, res) => {
-    console.log('Listening to Port 3000')
+const port = process.env.PORT || 3000
+app.listen(port, (req, res) => {
+    console.log(`Listening to Port ${port}`)
 });
