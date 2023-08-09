@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') %>
+    <div class="text-center">
+        <h1>YelpCamp Campground Pricing page</h1>
+    </div>
+    <div>
+        <ul>
+            <% for(let campground of campgrounds) {%>
+                <li>
+                    <em>
+                        <a href="/campgrounds/<%=campground._id%>">
+                            <%= campground.title%>
+                        </a>
+                    </em>
+                     pricing is
+                    <b>$<%= campground.price %>/night</b>
+                </li>
+                <% } %>
+        </ul>
+    </div>
+    <a href="/campgrounds/price" class="btn btn-primary mb-3">Back</a>
