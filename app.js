@@ -44,6 +44,8 @@ mongoose.connect(dbUrl, {
     useUnifiedTopology: true,
 
 });
+
+// connection
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Error!, Check Connection'));
 db.once('open', () => {

@@ -3,12 +3,14 @@ const router = express.Router();
 const multer = require('multer');
 const { storage } = require('../cloudinary')
 const uploads = multer({ storage })
-// models
 
+// models
 const campgrounds = require('../Controller/campground')
+
 // errors
 const wrapAsync = require('../Errors/wrapAsync');
 const validateCampground = require('../Errors/validateCampground');
+
 // Middleware
 const { isLoggedIn } = require('../middlewares/login');
 const { isAuthor } = require('../middlewares/isAuthor');

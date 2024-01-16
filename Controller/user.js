@@ -2,10 +2,12 @@ const User = require('../model/user');
 
 module.exports.registerForm = (req, res) => {
     res.render('users/register')
-}
+};
+
+
 module.exports.loginForm = (req, res) => {
     res.render('users/login')
-}
+};
 
 module.exports.registerUser = async (req, res) => {
     try {
@@ -22,11 +24,13 @@ module.exports.registerUser = async (req, res) => {
         res.redirect('register');
     }
 };
+
 module.exports.loginUser = (req, res) => {
     req.flash('success', `Successfully Logged in, Welcome back ${req.user.username}`);
     const redirectUrl = res.locals.returnTo || '/campgrounds';
     res.redirect(redirectUrl);
-}
+};
+
 module.exports.logoutUser = (req, res, next) => {
     req.logout(function (err) {
         if (err) {
