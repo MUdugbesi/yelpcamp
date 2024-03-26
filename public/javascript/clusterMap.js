@@ -1,5 +1,5 @@
 
-mapboxgl.accessToken = mapBoxToken;
+mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
 
 const map = new mapboxgl.Map({
     container: 'cluster-map',
