@@ -1,5 +1,5 @@
 
-mapboxgl.accessToken = pk.eyJ1Ijoic3BhcmtsZWtpbmc1MCIsImEiOiJjbHU4ZTZtZDYwZDZkMm5sbHE0NzJyaDNpIn0.MhpwQRmPpr9-PueYFvFq5w;
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3BhcmtsZWtpbmc1MCIsImEiOiJjbHU4ZTZtZDYwZDZkMm5sbHE0NzJyaDNpIn0.MhpwQRmPpr9-PueYFvFq5w';
 
 const map = new mapboxgl.Map({
     container: 'cluster-map',
